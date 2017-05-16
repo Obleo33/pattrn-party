@@ -1,10 +1,117 @@
+@import 'reset.css';
+@import 'accordion-tabs.scss';
+
+/* #34D1D1 , #2F2235 , #3F3244 #F2F2F2 #D1D2D3 #666666 #000000 */
+
+
+$deepPurple: #2F2235;
+$highLight: #34D1D1;
+$light: #F2F2F2;
+
+@font-face {
+    font-family: 'Open-Sans', sans-serif;
+    src: url("https://fonts.googleapis.com/css?family=Open+Sans:300,600");
+}
+
 body {
   font-family: 'Open-Sans', sans-serif;
+  background: white;
+}
 
-  background: black;
+.pattern-party-header {
+  display: flex;
+  align-items: center;
+  background-color: $deepPurple;
+  height: 50px;
 }
 
 .title {
-  color: white;
+  font-size: 18px;
+  right: 0;
+  margin-left: 20px;
   font-weight: 300;
+  color: $light;
+  text-transform: uppercase;
+  letter-spacing: -.5px;
+}
+
+.title span {
+  color: $highLight;
+}
+
+.myname {
+  font-size: 14px;
+  font-weight: 300;
+  position: absolute;
+  right: 0;
+  margin: auto 20px;
+  color: $light;
+}
+
+.section-header {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+.section-name {
+  font-size: 13px;
+  font-weight: 300;
+  display: flex;
+  width: 100%;
+  margin: 10px 0 0 20px;
+  text-transform: uppercase;
+}
+
+.section-name span{
+  min-width: 130px;
+}
+
+.section-name:after {
+  content: "";
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+  margin: 0 20px 5px 0 ;
+}
+
+@media (max-width: 600px) {
+  .pattern-party-header {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+  }
+
+  .title {
+    margin: 15px 0 5px;
+    font-size: 25px;
+  }
+
+  .title:after {
+    display: flex;
+    content: "";
+    border-bottom: 1px solid #666666;
+    width: 50%;
+    margin: 15px auto 5px;
+  }
+
+  .myname {
+    position: relative;
+    margin: 5px;
+  }
+
+  .section-name {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-size: 18px;
+  }
+
+  .section-name:after {
+    margin: 10px auto;
+    display: flex;
+    width: 20%;
+  }
 }
